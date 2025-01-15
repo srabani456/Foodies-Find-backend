@@ -1,11 +1,11 @@
 const express = require('express');
-const { resolve } = require('path');
-const cors=require('cors');
+let cors = require('cors');
+let sqlite3 = require('sqlite3').verbose();
+let { open } = require('sqlite');
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 app.use(cors());
-let {open}=require('sqlite');
-let sqlite3=require('sqlite3');
+app.use(express.json());
 let db;
 (async()=>{
   db=await open({
