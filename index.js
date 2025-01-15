@@ -11,7 +11,7 @@ let db;
   db=await open({
     filename:'./databaseFolder/database.sqlite',
     driver:sqlite3.Database
-  })
+  });
 })();
 //Get All Restaurants
 async function fetchAllRestaurants(){
